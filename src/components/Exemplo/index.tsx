@@ -9,10 +9,6 @@ export default function Exemplo({ texto }: ButtomProps) {
     // ? javascript
     const [apertado, setApertado] = useState<boolean>(false);
 
-    useEffect(() => {
-        console.log("executou");
-    }, [apertado]);
-
     // ? html
     return (
         <div>
