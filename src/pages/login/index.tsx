@@ -1,5 +1,6 @@
 import React, { FormEvent, useEffect, useState } from "react";
-import Exemplo from "components/Exemplo";
+import Exemplo from "@/components/Exemplo";
+import * as S from "./styles";
 
 export default function Login() {
     // ? javascript
@@ -21,15 +22,15 @@ export default function Login() {
             <form onSubmit={(e) => login(e)}>
                 <div>
                     <div>E-mail</div>
-                    <input
+                    <S.Input
                         type="text"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
-                <div>
+                <div className="bg-red-500 w-1/2">
                     <div>senha</div>
-                    <input
+                    <S.Input
                         type="password"
                         value={senha}
                         onChange={(e) => setSenha(e.target.value)}
