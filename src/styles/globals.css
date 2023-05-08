@@ -25,3 +25,48 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer components {
+    .with-transition {
+        @apply ease-in-out duration-500 transition-all;
+    }
+    .line-left {
+        @apply flex justify-start items-center;
+    }
+    .line-right {
+        @apply flex justify-end items-center;
+    }
+    .line-center {
+        @apply flex justify-center items-center;
+    }
+    .line-around {
+        @apply flex justify-around items-center;
+    }
+    .line-between {
+        @apply flex justify-between items-center;
+    }
+    .line-evenly {
+        @apply flex justify-evenly items-center;
+    }
+    .col-center {
+        @apply flex flex-col items-center;
+    }
+    .col-left {
+        @apply flex flex-col items-start;
+    }
+    .focused {
+        @apply border-none focus:border focus:border-orange-500;
+    }
+    .button {
+        @apply justify-center hover:opacity-50 items-center text-xs	 text-center relative inline-flex flex-shrink-0 border border-transparent rounded cursor-pointer focus:outline-none;
+    }
+    .focus-ring {
+        @apply focus:outline-none focus:ring ring-offset-2 ring-offset-gray-400 focus:ring-orange-500;
+    }
+    .transparent-in {
+        @apply bg-transparent text-sm py-2 pl-3 pr-8 outline-none border-b border-b-gray-200/50 focus:border-b-gray-200 text-white placeholder:text-white/20;
+    }
+    .input {
+        @apply text-black px-2 text-sm placeholder:text-black/50 disabled:opacity-75 border-0 outline-none bg-white;
+    }
+}

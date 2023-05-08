@@ -20,21 +20,30 @@ export default function Login() {
         <div>
             <div onClick={() => setApertado(!apertado)}>Login</div>
             <form onSubmit={(e) => login(e)}>
-                <div>
+                <div
+                    className={`bg-blue-400 ${
+                        apertado ? "w-1/2" : "w-full"
+                    } with-transition `}
+                >
                     <div>E-mail</div>
-                    <S.Input
+                    <input
+                        className="input"
                         type="text"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e: any) => setEmail(e.target.value)}
                     />
                 </div>
-                <div className="bg-red-500 w-1/2">
+                <div className="w-1/2">
                     <div>senha</div>
                     <S.Input
                         type="password"
                         value={senha}
-                        onChange={(e) => setSenha(e.target.value)}
+                        onChange={(e: any) => setSenha(e.target.value)}
                     />
+                </div>
+                <div className="line-center ">nova</div>
+                <div onClick={() => setApertado(!apertado)} className="button">
+                    troca
                 </div>
                 <Exemplo texto={"Enviar"} />
             </form>
