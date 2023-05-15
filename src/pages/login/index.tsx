@@ -17,36 +17,47 @@ export default function Login() {
 
     // ? html
     return (
-        <div>
-            <div onClick={() => setApertado(!apertado)}>Login</div>
-            <form onSubmit={(e) => login(e)}>
+        <div className="p-4 ">
+            <div className=" border-0 border-white p-4 sm:border-2 ">
                 <div
-                    className={`bg-blue-400 ${
-                        apertado ? "w-1/2" : "w-full"
-                    } with-transition `}
+                    className="mb-8 text-2xl font-semibold"
+                    onClick={() => setApertado(!apertado)}
                 >
-                    <div>E-mail</div>
-                    <input
-                        className="input"
-                        type="text"
-                        value={email}
-                        onChange={(e: any) => setEmail(e.target.value)}
-                    />
+                    Login
                 </div>
-                <div className="w-1/2">
-                    <div>senha</div>
-                    <S.Input
-                        type="password"
-                        value={senha}
-                        onChange={(e: any) => setSenha(e.target.value)}
-                    />
-                </div>
-                <div className="line-center ">nova</div>
-                <div onClick={() => setApertado(!apertado)} className="button">
-                    troca
-                </div>
-                <Exemplo texto={"Enviar"} />
-            </form>
+                <form onSubmit={(e) => login(e)}>
+                    <div className="line-left gap-4 flex-wrap">
+                        <div className={`w-full sm:w-64`}>
+                            <div className="">E-mail</div>
+                            <S.Input
+                                type="text"
+                                value={email}
+                                placeholder="E-mail"
+                                onChange={(e: any) => setEmail(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="w-full sm:w-64 ">
+                            <div className="">Senha</div>
+                            <S.Input
+                                type="password"
+                                placeholder="Senha"
+                                value={senha}
+                                onChange={(e: any) => setSenha(e.target.value)}
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div className="line-right">
+                        <button
+                            className="cursor-pointer border-2 w-full h-12 rounded-lg mt-8 border-white text-white line-center bg-black font-semibold
+                            sm:w-32 hover:bg-white hover:text-black with-transition"
+                        >
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }
