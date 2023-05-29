@@ -1,11 +1,18 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import api from "@/services/api";
+import { useRouter } from "next/router";
 import ReactLoading from "react-loading";
 import Exemplo from "@/components/Exemplo";
 import toast from "react-hot-toast";
+import nookies from "nookies";
 import * as S from "./styles";
 
 export default function Login() {
+    // ! monitor de renderização
+    // console.log("teste");
+
+    const router = useRouter();
+
     // ? javascript
     const [apertado, setApertado] = useState<boolean>(false);
     const [email, setEmail] = useState<string>("");
@@ -17,11 +24,30 @@ export default function Login() {
         e.preventDefault();
         setLoading(true);
         try {
-            const response = await api.post(`/login`, {
-                email: email,
-                senha: senha,
-            });
-            console.log("resposta do servidor ->", response.data);
+            const response = await api.get(`/signup`);
+            const users = response.data.map((item: any) => ({
+                email: item.email,
+                password: item.password,
+                id: item.id,
+            }));
+
+            const selectedUser = users.find(
+                (item: any) => item.email === email && item.password === senha
+            );
+            if (selectedUser === undefined) {
+                toast.error("Usuário ou senha incorretos!");
+            } else {
+                toast.success("Login realizado com sucesso!");
+                nookies.set(
+                    null,
+                    "USER",
+                    JSON.stringify({
+                        email: selectedUser.email,
+                        id: selectedUser.id,
+                    })
+                );
+                router.push("/home");
+            }
             setLoading(false);
         } catch (e) {
             console.log("erro ->", e);
@@ -68,6 +94,7 @@ export default function Login() {
                                             setSenha(e.target.value)
                                         }
                                         required
+                                        minLength={6}
                                     />
                                 </div>
                             </div>

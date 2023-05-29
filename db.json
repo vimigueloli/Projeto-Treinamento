@@ -1,0 +1,25 @@
+{
+  "signup": [
+    {
+      "fname": "Manoj",
+      "lname": "Adhikari",
+      "email": "usuario@gmail.com",
+      "phone": "234324234",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "fname": "shivam",
+      "lname": "adhikari",
+      "email": "shivamadhikari@gmail.com",
+      "phone": "32432",
+      "password": "asdf",
+      "id": 2
+    },
+    {
+      "email": "teste.login@email.com",
+      "password": "123456",
+      "id": 3
+    }
+  ]
+}
