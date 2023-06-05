@@ -1,25 +1,34 @@
 {
   "signup": [
     {
-      "fname": "Manoj",
-      "lname": "Adhikari",
+      "fname": "Usuario",
+      "lname": "Admin",
       "email": "usuario@gmail.com",
       "phone": "234324234",
       "password": "123456",
       "id": 1
     },
     {
-      "fname": "shivam",
-      "lname": "adhikari",
+      "fname": "Devio",
+      "lname": "Software",
       "email": "shivamadhikari@gmail.com",
       "phone": "32432",
       "password": "asdf",
       "id": 2
     },
     {
-      "email": "teste.login@email.com",
+      "fname": "Exemplo",
+      "lname": "A Seguir",
+      "email": "exemplo.login@email.com",
       "password": "123456",
       "id": 3
+    },
+    {
+      "fname": "Exemplo",
+      "lname": "A Seguir",
+      "email": "teste.login@email.com",
+      "password": "123456",
+      "id": 4
     }
   ]
 }

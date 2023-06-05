@@ -29,6 +29,7 @@ export default function Login() {
                 email: item.email,
                 password: item.password,
                 id: item.id,
+                fname: item.fname,
             }));
 
             const selectedUser = users.find(
@@ -44,6 +45,7 @@ export default function Login() {
                     JSON.stringify({
                         email: selectedUser.email,
                         id: selectedUser.id,
+                        fname: selectedUser.fname,
                     })
                 );
                 router.push("/home");
