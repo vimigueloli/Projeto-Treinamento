@@ -2,9 +2,8 @@
   "signup": [
     {
       "fname": "Usuario",
-      "lname": "Admin",
+      "lname": "Admin1",
       "email": "usuario@gmail.com",
-      "phone": "234324234",
       "password": "123456",
       "id": 1
     },
@@ -18,17 +17,17 @@
     },
     {
       "fname": "Exemplo",
-      "lname": "A Seguir",
+      "lname": "final",
       "email": "exemplo.login@email.com",
       "password": "123456",
       "id": 3
     },
     {
-      "fname": "Exemplo",
-      "lname": "A Seguir",
-      "email": "teste.login@email.com",
+      "fname": "primeira",
+      "lname": "criação",
+      "email": "primeira@criacao.com",
       "password": "123456",
-      "id": 4
+      "id": 5
     }
   ]
 }
